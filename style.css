@@ -1,0 +1,281 @@
+/* Global Styles Start Here */
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Jura", sans-serif;
+    background: var(--clr-dark-gray);
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 990px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --clr-white: #fff;
+    --clr-black: #000;
+    --clr-dark-gray: #e9e9e9;
+    --clr-light-gray: #e3e3e3;
+    --color-sec: #db6400;
+    --color-primary: #9d0191;
+}
+/* Global Styles End Here */
+
+/* Audio Box Styles Start Here */
+.audio-box {
+    position: relative;
+    background: var(--clr-white);
+    width: 25rem;
+    border-radius: 5px;
+    padding: 1rem;
+    overflow: hidden;
+}
+/* Audio Box Styles End Here */
+
+/* Audio Header Styles Start Here */
+.audio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.audio-header .fas {
+    font-size: 1.6rem;
+}
+
+.fa-bars {
+    cursor: pointer;
+}
+
+.audio-header h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+/* Audio Header Styles End Here */
+
+/* Audio Track Details Styles Start Here */
+.track-details {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.track-details img {
+    width: 70%;
+    border: 3px solid var(--clr-light-gray);
+    margin-bottom: 1rem;
+}
+
+.track-details .title {
+    font-weight: 600;
+}
+
+.track-details .artist {
+    font-weight: 400;
+    color: blue;
+}
+/* Audio Track Details Styles End Here */
+
+/* Audio Player Controls Styles Start Here */
+.audio-controls {
+    background: var(--clr-dark-gray);
+    padding: 2rem 1rem;
+    border-radius: 5rem 5rem 0 0;
+}
+
+.track-timer {
+    color: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+/* Audio Player Controls Styles End Here */
+
+/* Track Duration - Range Slider Styles Start Here */
+input[type="range"] {
+    appearance: none;
+    width: 50%;
+    outline: none;
+    height: 2px;
+    margin: 0 10%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    height: 2rem;
+    width: 2rem;
+    background: #2974ff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.duration input[type="range"] {
+    width: 809%;
+}
+/* Track Duration - Range Slider Styles End Here */
+
+/* Button Styles for Prev Play and Next Start Here */
+.audio-buttons {
+    text-align: center;
+    margin: 2rem auto;
+    width: 60%;
+    padding: 5px 0;
+    background: var(--clr-white);
+    border-radius: 5px;
+}
+
+.buttons > * {
+    border: none;
+    outline: none;
+    background: var(--clr-white);
+    color: var(--clr-dark-gray);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.play {
+    background: #2974ff;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    color: var(--clr-white);
+}
+
+.play-all {
+    display: block;
+    margin: 0 auto;
+    padding: 3px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.volume input[type="range"] {
+    margin: 0;
+}
+/* Button Styles for Prev Play and Next End Here */
+
+/* Volume Control Styles Start Here */
+.volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+}
+
+.volume #show-volume {
+    background: #2974ff;
+    color: var(--clr-white);
+    font-size: 1.4rem;
+    height: 2rem;
+    padding: 0 3px;
+    margin-right: 8px;
+}
+
+.volume i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-sec);
+    color: var(--clr-white);
+    font-size: 1.2rem;
+    height: 2rem;
+    padding: 0 3px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+/* Volume Control Styles End Here */
+
+/* Track Playlist Styles Start Here */
+.track-playlist {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: all .5s ease-in-out;
+}
+
+.playlist-header {
+    color: var(--clr-white);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--clr-light-gray);
+}
+
+.playlist-header .fa-times {
+    cursor: pointer;
+}
+
+.playlist-items {
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.playlist {
+    display: flex;
+    align-items: center;
+    color: var(--clr-white);
+}
+
+.track-index {
+    font-size: 1.4rem;
+    margin-right: 5px;
+}
+
+.playlist p {
+    width: 90%;
+    font-size: 1.4rem;
+    border-bottom: 1px solid var(--clr-light-gray);
+    padding: 5px 0;
+    cursor: pointer;
+}
+/* Track Playlist Styles End Here */
+
+/* Track Playlist Custom Scrollbar Styles Start Here */
+.playlist-items::-webkit-scrollbar {
+    height: 5px;
+    width: 4px; 
+    border: 1px solid #d5d5d5;
+    background: #d5d5d5;
+}
+
+.playlist-items::-webkit-scrollbar-track {
+    --webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.playlist-items::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    outline: 1px solid #eee;
+}
+/* Track Playlist Custom Scrollbar Styles End Here */
