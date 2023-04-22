@@ -155,4 +155,52 @@ function resetSlider() {
 }
 
 // Update Slider
+function updateSlider() {
+    let position = 0;
 
+    if (!isNaN(track.duration)) {
+        position = track.currentTime * (100 / track.duration);
+        slider.value = position;
+    }
+
+    if (track.ended) {
+        play.innerHTML = '<i class="fas fa-play"></i>';
+        if (autoplay == 1 && indexTrack < trackList.length -1) {
+            indexTrack++;
+            loadTrack(indexTrack);
+            playTrack();
+        } else if (autoplay == 1 && indexTrack == trackList.length -1) {
+            indexTrack = 0;
+            loadTrack(indexTrack);
+            playTrack();
+        }
+    }
+}
+
+// Update Current Track Time
+function trackTimeUpdate() {
+    if (track.duration) {
+        let currentMins = Math.floor(track.currentTime / 60);
+        let currentSecs = Math.floor(track.currentTime - currentMins * 60);
+        let durationMins = Math.floor(track.duration / 60);
+        let durationSecs = Math.floor(track.duration - durationMins *60);
+        // append zero to times if values ten
+        if (durationMins < 10 ) {
+            durationMins = "0" + durationMins;
+        }
+        if (durationSecs < 10 ) {
+            durationSecs = "0" + durationSecs;
+        }
+        if (currentMins < 10 ) {
+            currentMins = "0" + currentMins;
+        }
+        if (currentSecs < 10 ) {
+            currentSecs = "0" + currentSecs;
+        }
+        trackCurrentTime.innerHTML = currentMins + ":" + currentSecs;
+        trackDuration.innerHTML = durationMins + ":" + durationSecs;
+    } else {
+        trackCurrentTime.innerHTML = "00" + ":" + "00";
+        trackDuration.innerHTML = "00" + ":" + "00";
+    }
+}
