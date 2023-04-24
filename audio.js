@@ -230,3 +230,19 @@ function displayTracks() {
 }
 
 displayTracks();
+
+// Play Track From Tracklist
+function playFromPlayList() {
+    playlistItems.addEventListener("click", (e) => {
+        if (e.target.classList.contains("single-track")) {
+            const indexNum = trackList.findIndex((item, index) => {
+                if (item.name === e.target.innerHTML) {
+                    return true;
+                }
+            });
+            loadTrack(indexNum);
+            playTrack();
+            hidePlayList();
+        }
+    });
+}
