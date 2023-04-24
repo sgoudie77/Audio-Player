@@ -46,8 +46,8 @@ volumeIcon.addEventListener("click", muteSound);
 currentVolume.addEventListener("change", changeVolume);
 trackSlider.addEventListener("change", changeDuration);
 track.addEventListener("timeupdate", trackTimeUpdate);
-openPlaylistIcon.addEventListener("click", showPlayist);
-closePlaylistIcon.addEventListener("click", hidePlayist);
+openPlaylistIcon.addEventListener("click", showPlaylist);
+closePlaylistIcon.addEventListener("click", hidePlaylist);
 
 // Load Tracks
 function loadTrack(indexTrack) {
@@ -204,3 +204,29 @@ function trackTimeUpdate() {
         trackDuration.innerHTML = "00" + ":" + "00";
     }
 }
+
+// Show Tracklist
+function showPlayList() {
+    trackPlaylist.style.transform = "translateX(0)";
+}
+// Hide Tracklist
+function hidePlayList() {
+    trackPlaylist.style.transform = "translateX(-100%)";
+}
+
+// Display Tracks in the Playlist
+let counter = 1;
+function displayTracks() {
+    for (let i=0; i < trackList.length; i++) {
+        let div = document.createElement("div");
+        div.classList.add("playlist");
+        div.innerHTML = `
+            <span class="track-index">${counter++}</span>
+            <p class="single-track">${trackList[i].name}</p>
+        `;
+        playlistItems.appendChild(div);
+    }
+    playFromPlayList();
+}
+
+displayTracks();
