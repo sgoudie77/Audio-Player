@@ -57,7 +57,7 @@ function loadTrack(indexTrack) {
     track.src = trackList[indexTrack].path;
     trackImage.src = trackList[indexTrack].img;
     title.innerHTML = trackList[indexTrack].name;
-    artist.innerHTML = trackList[indexTrack].tradckArtist;
+    artist.innerHTML = trackList[indexTrack].trackArtist;
     track.load();
 
     timer = setInterval(updateSlider, 1000);
@@ -76,14 +76,14 @@ function trackPlay() {
 // Play Track
 function playTrack() {
     track.play();
-    songIsPlaying == true;
+    songIsPlaying = true;
     play.innerHTML = '<i class="fas fa-pause"></i>';
 }
 
 // Pause Track
 function pauseTrack() {
     track.pause();
-    songIsPlaying == false;
+    songIsPlaying = false;
     play.innerHTML = '<i class="fas fa-play"></i>';
 }
 
@@ -116,10 +116,10 @@ function prevTrack() {
 // Mute Volume
 function muteSound() {
     if (track.muted == false) {
-        track.muted == true;
+        track.muted = true;
         volumeIcon.innerHTML = '<i class="fas fa-volume-mute" id="volume-icon"></i>';
     } else {
-        track.muted == false;
+        track.muted = false;
         volumeIcon.innerHTML = '<i class="fas fa-volume-up" id="volume-icon"></i>';
     }
 }
@@ -129,19 +129,19 @@ function changeVolume() {
     showVolume.value = currentVolume.value;
     track.volume = currentVolume.value / 100;
     console.log(track.volume);
-    document.getElementById('show-volume').innerHTML = track.volume * 100 + "%";
+    document.getElementById('show-volume').innerHTML = Math.floor(track.volume * 100) + "%";
 }
 
 // Change Duration
 function changeDuration() {
-    let sliderPosition = track.duration * (slider.value / 100);
+    let sliderPosition = track.duration * (trackSlider.value / 100);
     track.currentTime = sliderPosition;
 }
 
 // Play All Tracks Autoplay
 function playAllToggle() {
     if (autoplay == 0) {
-        autoplay == 1;
+        autoplay = 1;
         playAll.style.background = "#db6400";
     } else {
         autoplay = 0;
@@ -151,7 +151,7 @@ function playAllToggle() {
 
 // Reset Slider
 function resetSlider() {
-    slider.value = 0;
+    trackSlider.value = 0;
 }
 
 // Update Slider
@@ -160,7 +160,7 @@ function updateSlider() {
 
     if (!isNaN(track.duration)) {
         position = track.currentTime * (100 / track.duration);
-        slider.value = position;
+        trackSlider.value = position;
     }
 
     if (track.ended) {
@@ -184,7 +184,7 @@ function trackTimeUpdate() {
         let currentSecs = Math.floor(track.currentTime - currentMins * 60);
         let durationMins = Math.floor(track.duration / 60);
         let durationSecs = Math.floor(track.duration - durationMins *60);
-        // append zero to times if values ten
+        // append zero to times below if value is less than ten
         if (durationMins < 10 ) {
             durationMins = "0" + durationMins;
         }
@@ -206,11 +206,11 @@ function trackTimeUpdate() {
 }
 
 // Show Tracklist
-function showPlayList() {
+function showPlaylist() {
     trackPlaylist.style.transform = "translateX(0)";
 }
 // Hide Tracklist
-function hidePlayList() {
+function hidePlaylist() {
     trackPlaylist.style.transform = "translateX(-100%)";
 }
 
@@ -242,7 +242,7 @@ function playFromPlayList() {
             });
             loadTrack(indexNum);
             playTrack();
-            hidePlayList();
+            hidePlaylist();
         }
     });
 }
