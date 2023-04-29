@@ -66,7 +66,8 @@ img {
     margin-bottom: 1rem;
 }
 
-.audio-header .fas {
+.audio-header .fas,
+.audio-header .fa-headphones {
     font-size: 1.6rem;
 }
 
