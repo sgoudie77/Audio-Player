@@ -142,10 +142,12 @@ function changeDuration() {
 function playAllToggle() {
     if (autoplay == 0) {
         autoplay = 1;
-        playAll.style.background = "#db6400";
+        playAll.style.background = "#4f4f4f";
+        playAll.style.color = "#fff";
     } else {
         autoplay = 0;
-        playAll.style.background = "#ccc";
+        playAll.style.background = "#e3e3e3";
+        playAll.style.color = "#000";
     }
 }
 

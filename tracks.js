@@ -1,26 +1,26 @@
 let trackList = [
     {
-        name: "ABC",
-        path: "tracks/#",
+        name: "River Tram",
+        path: "tracks/river-tram.mp3",
         img: "img/img1.jpg",
-        trackArtist: "111",
+        trackArtist: "Olexy",
     },
     {
-        name: "DEF",
-        path: "tracks/#",
+        name: "Inspiring Dream",
+        path: "tracks/inspiring-dream.mp3",
         img: "img/img2.jpg",
-        trackArtist: "222",
+        trackArtist: "Audio Coffee",
     },
     {
-        name: "GHI",
-        path: "tracks/#",
+        name: "To Meet The Light",
+        path: "tracks/to-meet-the-light.mp3",
         img: "img/img3.jpg",
-        trackArtist: "333",
+        trackArtist: "Lemon Music Studio",
     },
     {
-        name: "JKL",
-        path: "tracks/#",
+        name: "Acoustic Motivation",
+        path: "tracks/acoustic-motivation.mp3",
         img: "img/img4.jpg",
-        trackArtist: "444",
+        trackArtist: "Coma Media",
     },
 ]

@@ -13,8 +13,8 @@ html {
 
 body {
     font-family: "Jura", sans-serif;
-    /* background: var(--clr-dark-gray); */
-    background: #26272b;
+    background: var(--clr-dark-gray);
+    /* background: #26272b; */
 }
 
 p {
@@ -30,7 +30,6 @@ img {
     max-width: 990px;
     margin: 0 auto;
     padding: 0 20px;
-
     width: 100%;
     height: 100vh;
     display: flex;
@@ -133,10 +132,10 @@ img {
 /* Track Duration - Range Slider Styles Start Here */
 input[type="range"] {
     appearance: none;
-    width: 50%;
+    width: 100%;
     outline: none;
     height: 2px;
-    margin: 0 10%;
+    /* margin: 0 10%; */
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -147,10 +146,14 @@ input[type="range"]::-webkit-slider-thumb {
     background: var(--clr-light-gray);
     border-radius: 50%;
     cursor: pointer;
+
 }
 
 .duration input[type="range"] {
     width: 80%;
+}
+.volume input[type="range"] {
+    margin-right: 8px;
 }
 /* Track Duration - Range Slider Styles End Here */
 
@@ -175,25 +178,27 @@ input[type="range"]::-webkit-slider-thumb {
 
 .play {
     /* background: #2974ff; */
-    background: var(--clr-light-gray);
+    /* background: var(--clr-light-gray); */
+    background: none;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    color: var(--clr-dark-gray);
+    color: var(--clr-light-gray);
     margin: 0 .75rem;
     cursor: pointer;
-    border: none;
-    outline: none;
+    border: 1px solid var(--clr-light-gray);
+    /* outline: none; */
 }
 
 .prev, .next {
-    color: var(--clr-dark-gray);
+    background: none;
+    color: var(--clr-light-gray);
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
     cursor: pointer;
-    border: none;
-    outline: none;
+    border: 1px solid var(--clr-light-gray);
+    /* outline: none; */
 }
 
 .play-all {
@@ -235,6 +240,10 @@ input[type="range"]::-webkit-slider-thumb {
     text-align: center;
 }
 
+/* .volume #volume-icon {
+    margin-left: 8px;
+} */
+
 .volume i {
     display: flex;
     justify-content: center;
@@ -242,13 +251,13 @@ input[type="range"]::-webkit-slider-thumb {
     /* background: var(--color-sec); */
     background: var(--clr-light-gray);
     /* color: var(--clr-white); */
-    color: var(--clr-black);
+    color: var(--clr-dark-gray);
     font-size: 1.3rem;
     height: 2rem;
     width: 3.8rem;
     /* padding: 0 3px; */
     /* margin-right: 3px; */
-    margin-left: 2px;
+    /* margin-left: 2px; */
     border-radius: 2px;
     cursor: pointer;
 }
