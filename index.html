@@ -17,8 +17,8 @@
                 <div class="audio-player">
                     <!-- audio player header -->
                     <div class="audio-header">
-                        <i class="fa-solid fa-headphones"></i>
-                        <i class="fas fa-bars"></i>
+                        <i title="Audio Player" class="fa-solid fa-headphones"></i>
+                        <i title="Open Playlist" class="fas fa-bars"></i>
                     </div>
                     <!-- audio track details -->
                     <div class="track-details">
@@ -33,7 +33,7 @@
                             <span class="duration-time">04:10</span>
                         </div>
                         <!-- track duration -->
-                        <div class="track-duration">
+                        <div title="track time" class="track-duration">
                             <input 
                                 type="range" 
                                 class="duration-slider" 
@@ -42,8 +42,11 @@
                                 value="0"
                             >
                         </div>
-                        <!-- buttons for prev play next -->
+                        <!-- buttons for repeat prev play next play-all-->
                         <div class="audio-buttons">
+                            <button title="repeat" class="repeat-track">
+                                <i class="fa-solid fa-rotate-right"></i>
+                            </button>
                             <button class="prev">
                                 <i class="fas fa-step-backward"></i>
                             </button>
@@ -53,13 +56,12 @@
                             <button class="next">
                                 <i class="fas fa-step-forward"></i>
                             </button>
+                            <button title="play-all" class="play-all">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
                         </div>
-                        <!-- play all tracks -->
-                        <button class="play-all">
-                            Play All <i class="fas fa-sync-alt"></i>
-                        </button>
                         <!-- volume controls -->
-                        <div class="volume">
+                        <div title="volume level" class="volume">
                             <p id="show-volume">50%</p>
                             <input 
                             type="range" 
@@ -69,7 +71,7 @@
                             value="50"
                             >
                             <button id="volume-icon">
-                                <i class="fas fa-volume-up"></i>
+                                <i title="mute" class="fas fa-volume-mute"></i>
                             </button>
                         </div>
                     </div>
@@ -79,9 +81,9 @@
                 <div class="track-playlist">
                     <!-- playlist header -->
                     <div class="audio-header playlist-header">
-                        <i class="fa-solid fa-headphones"></i>
+                        <i title="Audio Player" class="fa-solid fa-headphones"></i>
                         <h2>Track Playlist</h2>
-                        <i class="fas fa-times"></i>
+                        <i title="Close Playlist" class="fas fa-times"></i>
                     </div>
                     <!-- playlist items -->
                     <div class="playlist-items">

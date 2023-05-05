@@ -30,6 +30,8 @@ const trackPlaylist = document.querySelector(".track-playlist");
 const playlistItems = document.querySelector(".playlist-items");
 const playlist = document.querySelector(".playlist");
 
+const repeat = document.querySelector(".repeat-track")
+
 // Set Track Playing Variables 
 let timer;
 let autoplay = 0;
@@ -48,6 +50,10 @@ trackSlider.addEventListener("change", changeDuration);
 track.addEventListener("timeupdate", trackTimeUpdate);
 openPlaylistIcon.addEventListener("click", showPlaylist);
 closePlaylistIcon.addEventListener("click", hidePlaylist);
+
+repeat.addEventListener("click", repeatTrack);
+
+
 
 // Load Tracks
 function loadTrack(indexTrack) {
@@ -113,14 +119,27 @@ function prevTrack() {
     }
 }
 
+// Repeat Track
+function repeatTrack() {
+    if (track.loop == false) {
+        track.loop = true;
+        repeat.style.background = "#4f4f4f";
+        repeat.style.color = "#fff";
+    } else {
+        track.loop = false;
+        repeat.style.background = "#e3e3e3";
+        repeat.style.color = "#000";
+    }
+}
+
 // Mute Volume
 function muteSound() {
     if (track.muted == false) {
         track.muted = true;
-        volumeIcon.innerHTML = '<i class="fas fa-volume-mute" id="volume-icon"></i>';
+        volumeIcon.innerHTML = '<i title="unmute" class="fas fa-volume-up" id="volume-icon"></i>';
     } else {
         track.muted = false;
-        volumeIcon.innerHTML = '<i class="fas fa-volume-up" id="volume-icon"></i>';
+        volumeIcon.innerHTML = '<i title="mute" class="fas fa-volume-mute" id="volume-icon"></i>';
     }
 }
 
