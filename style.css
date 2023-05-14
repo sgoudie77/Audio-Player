@@ -323,6 +323,10 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 5px 0;
     cursor: pointer;
 }
+.playlist p:hover {
+    background: var(--clr-dark-gray);
+    padding-left: .25rem;
+}
 /* Track Playlist Styles End Here */
 
 /* Track Playlist Custom Scrollbar Styles Start Here */

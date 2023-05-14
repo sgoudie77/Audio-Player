@@ -50,10 +50,7 @@ trackSlider.addEventListener("change", changeDuration);
 track.addEventListener("timeupdate", trackTimeUpdate);
 openPlaylistIcon.addEventListener("click", showPlaylist);
 closePlaylistIcon.addEventListener("click", hidePlaylist);
-
 repeat.addEventListener("click", repeatTrack);
-
-
 
 // Load Tracks
 function loadTrack(indexTrack) {
@@ -67,6 +64,8 @@ function loadTrack(indexTrack) {
     track.load();
 
     timer = setInterval(updateSlider, 1000);
+    console.log(indexTrack);
+    document.getElementById("track-num").innerHTML = indexTrack + 1;
 }
 loadTrack(indexTrack);
 
