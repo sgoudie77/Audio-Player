@@ -74,6 +74,18 @@ img {
     color: white;
 }
 
+#track-nums {
+    position: relative;
+    display: flex;
+    letter-spacing: 1px;
+}
+#track-num {
+    margin: 0 .5rem;
+}
+#track-total {
+    margin-left: .5rem;
+}
+
 .audio-header .fas,
 .audio-header .fa-headphones {
     font-size: 1.6rem;

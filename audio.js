@@ -66,6 +66,7 @@ function loadTrack(indexTrack) {
     timer = setInterval(updateSlider, 1000);
     console.log(indexTrack);
     document.getElementById("track-num").innerHTML = indexTrack + 1;
+    document.getElementById("track-total").innerHTML = trackList.length;
 }
 loadTrack(indexTrack);
 
