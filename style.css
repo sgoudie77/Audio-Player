@@ -79,11 +79,14 @@ img {
     display: flex;
     letter-spacing: 1px;
 }
+#track-nums p {
+    font-size: 1.25rem;
+}
 #track-num {
-    margin: 0 .5rem;
+    margin: 0 .25rem;
 }
 #track-total {
-    margin-left: .5rem;
+    margin-left: .25rem;
 }
 
 .audio-header .fas,
@@ -114,12 +117,15 @@ img {
 }
 
 .track-details .title {
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 1px;
     color: var(--clr-white);
 }
 
 .track-details .artist {
-    font-weight: 400;
+    font-weight: 200;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
     color: var(--clr-white);
 }
 /* Audio Track Details Styles End Here */
@@ -237,6 +243,75 @@ input[type="range"]::-webkit-slider-thumb {
     margin: 0 1rem;
 }
 /* Button Styles for Prev Play and Next End Here */
+
+/* Waveform Styles Start Here */
+#audiowave {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background-color: var(--clr-gray);
+    /* overflow: hidden; */
+    box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+.loader {
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+}
+.loader .stroke {
+    background: #f1f1f1;
+    height: 150%;
+    width: 3px;
+    border-radius: 50px;
+    margin: 0 2.5px;
+    animation: waves 1.4s linear infinite;
+}
+@keyframes waves {
+    50% {
+        height: 20%;
+        background: #4286f4;
+    }
+    100% {
+        background: #4286f4;
+        height: 100%;
+    }
+}
+.stroke:nth-child(1){
+  animation-delay: 0s;
+}
+.stroke:nth-child(2){
+  animation-delay: 0.1s;
+}
+.stroke:nth-child(3){
+  animation-delay: 0.2s;
+}
+.stroke:nth-child(4){
+  animation-delay: 0.3s;
+}
+.stroke:nth-child(5){
+  animation-delay: 0.6s;
+}
+.stroke:nth-child(6){
+  animation-delay: 0.9s;
+}
+.stroke:nth-child(7){
+  animation-delay: 0.6s;
+}
+.stroke:nth-child(8){
+  animation-delay: 0.3s;
+}
+.stroke:nth-child(9){
+  animation-delay: 0.2s;
+}
+.stroke:nth-child(10){
+  animation-delay: 0.1s;
+}
+.stroke:nth-child(11){
+  animation-delay: 0s;
+}
+/* Waveform Styles End Here */
 
 /* Volume Control Styles Start Here */
 .volume {

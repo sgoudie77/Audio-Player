@@ -30,7 +30,8 @@ const trackPlaylist = document.querySelector(".track-playlist");
 const playlistItems = document.querySelector(".playlist-items");
 const playlist = document.querySelector(".playlist");
 
-const repeat = document.querySelector(".repeat-track")
+const repeat = document.querySelector(".repeat-track");
+const wave = document.querySelector('.audiowave');
 
 // Set Track Playing Variables 
 let timer;
@@ -81,6 +82,7 @@ function trackPlay() {
 
 // Play Track
 function playTrack() {
+    wave.classList.add('loader');
     track.play();
     songIsPlaying = true;
     play.innerHTML = '<i class="fas fa-pause"></i>';
@@ -88,6 +90,7 @@ function playTrack() {
 
 // Pause Track
 function pauseTrack() {
+    wave.classList.remove('loader');
     track.pause();
     songIsPlaying = false;
     play.innerHTML = '<i class="fas fa-play"></i>';
@@ -225,6 +228,19 @@ function trackTimeUpdate() {
         trackDuration.innerHTML = "00" + ":" + "00";
     }
 }
+
+// Waveform Display
+// var wavesurfer = WaveSurfer.create({
+//     container: '.audiowave',
+//     waveColor: 'white',
+//     progressColor: 'gray',
+//     barWidth: 1,
+//     barHeight: .5,
+//     hideScrollbar: true,
+//     autoCenter: true,
+
+// });
+// wavesurfer.load(indexTrack);
 
 // Show Tracklist
 function showPlaylist() {
